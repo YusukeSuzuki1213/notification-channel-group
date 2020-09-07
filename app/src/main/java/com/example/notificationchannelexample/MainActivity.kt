@@ -8,6 +8,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        NotificationUtil.createChannel(applicationContext)
+
         supportFragmentManager
             .beginTransaction()
             .replace(
