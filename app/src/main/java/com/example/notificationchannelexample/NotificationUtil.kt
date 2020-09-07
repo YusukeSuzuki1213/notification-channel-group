@@ -19,5 +19,9 @@ class NotificationUtil {
                 }
             )
         }
+
+        fun localPush(context: Context, item: PushMessageItem) {
+
+        }
     }
 }
