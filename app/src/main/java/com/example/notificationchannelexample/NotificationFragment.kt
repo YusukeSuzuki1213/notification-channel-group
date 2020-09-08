@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.notificationchannelexample.databinding.FragmentNotificationBindingImpl
+import com.example.notificationchannelexample.model.PushMessageItem
 import kotlinx.android.synthetic.main.fragment_notification.*
 import java.io.Serializable
 
@@ -39,15 +40,27 @@ class NotificationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.run {
             notification1.setOnClickListener {
-
+                NotificationUtil.localPush(
+                    requireContext(),
+                    PushMessageItem("notification_channel_1", "テスト通知", "チャンネル1"
+                    )
+                )
             }
 
             notification2.setOnClickListener {
-
+                NotificationUtil.localPush(
+                    requireContext(),
+                    PushMessageItem("notification_channel_2", "テスト通知", "チャンネル2"
+                    )
+                )
             }
 
             notification3.setOnClickListener {
-
+                NotificationUtil.localPush(
+                    requireContext(),
+                    PushMessageItem("notification_channel_3", "テスト通知", "チャンネル3"
+                    )
+                )
             }
         }
     }
